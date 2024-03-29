@@ -6,12 +6,7 @@ The optional branch filter is useful for excluding PRs that are not based on the
 ## Install
 
 ```bash
-(
-    set -euxo pipefail;
-    git clone https://github.com/qrkourier/gh-pr-finder.git;
-    cd gh-pr-finder;
-    go install ./...
-)
+go install github.com/qrkourier/gh-pr-finder@main
 ```
 
 ## Run

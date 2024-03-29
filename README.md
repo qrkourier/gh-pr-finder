@@ -12,13 +12,16 @@ go install github.com/qrkourier/gh-pr-finder@main
 ## Run
 
 ```bash
-$(go env GOPATH)/bin/gh-pr-finder \
-    --owners openziti,openziti-test-kitchen,openziti-terraform-modules,netfoundry \
-    --authors qrkourier \
-    --branches main,release-next
+GITHUB_TOKEN=$(gh auth status -t | awk '/Token/{print $3}') \
+    $(go env GOPATH)/bin/gh-pr-finder \
+        --owners openziti,openziti-test-kitchen,openziti-terraform-modules,netfoundry \
+        --authors qrkourier \
+        --branches main,release-next
 ```
 
-```buttonless title=Output
+Output
+
+```text
 https://github.com/openziti/helm-charts/pull/187
 https://github.com/openziti/ziti-console/pull/289
 https://github.com/openziti/ziti-console/pull/284
